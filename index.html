@@ -9,18 +9,16 @@
         <link rel="stylesheet" href="css/index.css">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
-        <script>
-            const { animate } = anime;
-        </script>
+        <script>const { animate } = anime;</script>
         <style class="colors-styles">[data-type='4'][data-sm-href='LOCATION_MAP'] { border-width:1.5px!important;border-style:solid!important;border-color:transparent!important; } [data-type='4'][data-sm-href='LOCATION_MAP']:hover { border-width:1.5px!important;border-style:solid!important;border-color:transparent!important; } [data-type='8'][data-sm-href='WISH_WISHLIST'] { border-width:1.5px!important;border-style:solid!important;border-color:transparent!important; } [data-type='8'][data-sm-href='WISH_WISHLIST']:hover { border-width:1.5px!important;border-style:solid!important;border-color:transparent!important; } [data-type='9'][data-sm-href='CONTACT_LINK'] { border-width:1.5px!important;border-style:solid!important;border-color:transparent!important; } [data-type='9'][data-sm-href='CONTACT_LINK']:hover { border-width:1.5px!important;border-style:solid!important;border-color:transparent!important; } [data-type='10'][data-sm-anketa-send] { border-width:1.5px!important;border-style:solid!important;border-color:transparent!important; } [data-type='10'][data-sm-anketa-send]:hover { border-width:1.5px!important;border-style:solid!important;border-color:transparent!important; } .sm-modal [data-sm-anketa-send] { border-width:1px!important;border-style:solid!important; } .sm-modal [data-sm-anketa-send]:hover { border-width:1px!important;border-style:solid!important; } [data-type='10'].open-modal { border-width:1.5px!important;border-style:solid!important;border-color:transparent!important; } [data-type='10'].open-modal:hover { border-width:1.5px!important;border-style:solid!important;border-color:transparent!important; }</style><style class="colors-styles-desktop">@media (min-width:500px){}</style><style class="colors-styles-mobile">@media (max-width:500px){}</style>
     </head>
 
 <body class="sm-template50 sm-color1 sm-scroll_type-1 sm-scroll_speed-1 sm-hfont-0 sm-project-" data-project-id="183150" data-lang="ru">
     <main>
     <div class="sm-mob-btn sm-hidden_slow">
-        <div class="sm-button open-modal">Подтвердить присутствие</div>
+        <button class="sm-button open-modal">Подтвердить присутствие</div>
     </div>
-    <section class="sm-main sm-edit" data-type="1">
+    <section class="sm-main" data-type="1">
         <div class="sm-main__img">
             <img data-sm-src="COVER_PHOTO" alt="COVER_PHOTO" src="img/main.jpg">
         </div>
@@ -45,7 +43,7 @@
         </div>
     </section>
     <!-- Этот момент настал -->
-    <section class="sm-moment sm-edit" data-type="2">
+    <section class="sm-moment" data-type="2">
 
         <div class="sm-container">
             <div class="sm-moment__wrapper">
@@ -72,7 +70,7 @@
         </div>
     </section>
     <!-- Свадьба состоится -->
-    <section class="sm-date sm-edit" data-type="3">
+    <section class="sm-date" data-type="3">
         <div class="sm-background-photo texture__bg" style=""></div>
         <div class="sm-container">
             <div class="sm-date__content">
@@ -106,7 +104,7 @@
         </div>
     </section>
     <!-- Локация -->
-    <section class="sm-location sm-edit" data-type="4">
+    <section class="sm-location" data-type="4">
 
         <div class="sm-container">
             <div class="sm-location__content">
@@ -138,7 +136,7 @@
         </div>
     </section>
     <!--тайминги-->
-    <section class="sm-timing sm-edit" data-type="5">
+    <section class="sm-timing" data-type="5">
 
         <div class="sm-container">
             <h2 class="sm-cormorantRegular-70-30" data-sm-text="TIMING_TITLE" title="Тайминг">Тайминг</h2>
@@ -226,7 +224,7 @@
     </section>
     <!--/тайминги-->
     <!--до нашей свадьбы осталось-->
-    <section class="sm-timer sm-edit" data-type="7">
+    <section class="sm-timer" data-type="7">
         <div class="sm-container">
             <div class="sm-timer__container">
                 <h2 class="sm-timer__container-titel sm-cormorantRegular-70-30" data-sm-text="TIMER_TITLE" title="До нашей свадьбы осталось">До нашей свадьбы осталось</h2>
@@ -257,7 +255,7 @@
         </div>
     </section>
     <!-- Пожелания -->
-    <section class="sm-wishes sm-edit" data-type="8">
+    <section class="sm-wishes" data-type="8">
         <div class="sm-container">
             <div class="sm-wishes__content">
                 <h2 class="sm-cormorantRegular-70-30 " data-sm-text="WISH_TITLE" title="Пожелания">Пожелания</h2>
@@ -270,7 +268,7 @@
         </div>
     </section>
     <!-- Анкета гостя Форма -->
-    <section class="sm-questionnaire sm-edit" data-type="10">
+    <section class="sm-questionnaire" data-type="10">
         <div class="sm-questionnaire__container">
             <div class="sm-questionnaire__top">
                 <h2 class="sm-cormorantRegular-70-30" data-sm-text="ANKETA_TITLE" title="Анкета гостя">Анкета гостя</h2>
@@ -279,15 +277,19 @@
                     <span data-sm-bday="">01</span> / <span data-sm-bmonth="">06</span> / 20<span data-sm-byear="">26</span>
                 </div>
             </div>
-            <div class="sm-questionnaire-btn sm-btn open-modal-2">Подтвердить присутствие</div>
-            <div class="sm-questionnaire-form">
+            <button class="sm-questionnaire-btn sm-btn open-modal-2">Подтвердить присутствие</button>
+            <div class="sm-questionnaire-form sm-modal-mobile">
+                <button class="sm-modal-close">
+                    <img class="sm-modal-close_img" src="img/close.png" alt="close">
+                </button>
+                <div class="sm-modal-title sm-manropeBold-20-18">Пожалуйста, подтвердите Ваше присутствие:</div>
                 <div class="sm-background-photo"></div>
                 <div class="sm-line text-paint-background background-paint-background-before text-paint-border-before"></div>
-                <form class="sm-form">
+                <form class="sm-form" id="form_approve">
                     <div class="sm-form__wrapper">
                         <div class="sm-form__left">
                             <div class="sm-form__block">
-                                <div class="bold">Пожалуйста, подтвердите Ваше присутствие:</div>
+                                <div class="bold mobile_hidden">Пожалуйста, подтвердите Ваше присутствие:</div>
                                 <input class="sm-form__input" type="text" placeholder="Имя и Фамилия" data-sm-anketa-name="">
                             </div>
 
@@ -347,29 +349,26 @@
                                     <div class="sm-form_checkbox">
                                         <input class="sm-form_checkbox_input" type="checkbox" id="alco60" name="alco[]" value="6">
                                         <span class="sm-form_checkbox_box"></span>
-                                        <label for="alco80" data-sm-alcoitem="">Безалкогольные напитки</label>
+                                        <label for="alco60" data-sm-alcoitem="">Безалкогольные напитки</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="sm-line text-paint-background background-paint-background-before text-paint-border-before"></div>
                     <button class="sm-btn" data-sm-anketa-send="1">Отправить</button>
                 </form>
-                <div class="sm-line text-paint-background background-paint-background-before text-paint-border-before"></div>
-
+                <div class="sm-line text-paint-background background-paint-background-before text-paint-border-before mobile_hidden"></div>
             </div>
         </div>
     </section>
     <!-- Фото -->
-    <section class="sm-bg-image sm-edit" data-type="11" data-jsscroll="" data-jsscroll-slide-top="">
+    <section class="sm-bg-image" data-type="11" data-jsscroll="" data-jsscroll-slide-top="">
         <img class="sm-bg-image_photo" src="img/footer.jpg" data-sm-src="SPLASH" alt="img">
     </section>
     <!-- Модальные окна -->
-    <div class="sm-modal" id="modal">
+    <!-- <div class="sm-modal" id="modal">
         <div class="sm-container">
-            <div class="sm-modal-close">
-                <img class="sm-modal-close_img" src="img/close.png" alt="close">
-            </div>
             <h3 class="sm-modal-titel sm-manropeBold-20-18">Пожалуйста, подтвердите Ваше присутствие:</h3>
             <div class="sm-line text-paint-background background-paint-background-before text-paint-border-before"></div>
             <form class="sm-form">
@@ -402,58 +401,58 @@
                         <div class="sm-manropeLight-20-18" data-sm-text="ANKETA_DRINKS_QUESTION">Ваши предпочтения</div>
                         <div class="sm-form__drinks">
                             <div class="sm-form__drinks-check mr-40px" data-sm-anketa="1">
-                                <div class="sm-form_checkbox sm-manropeLight-20-18 ct-alcotpl">
+                                <div class="sm-form_checkbox ct-alcotpl">
                                     <input class="sm-form_checkbox_input" type="checkbox" id="" name="alco[]" value="">
                                     <span class="sm-form_checkbox_box"></span>
                                     <label for="" data-sm-alcoitem=""></label>
                                 </div>
-                            <div class="sm-form_checkbox sm-manropeLight-20-18">
-                                    <input class="sm-form_checkbox_input" type="checkbox" id="alco11" name="alco[]" value="1">
+                                <div class="sm-form_checkbox">
+                                    <input class="sm-form_checkbox_input" type="checkbox" id="alco10" name="alco[]" value="1">
                                     <span class="sm-form_checkbox_box"></span>
-                                    <label for="alco11" data-sm-alcoitem="">Шампанское</label>
-                                </div><div class="sm-form_checkbox sm-manropeLight-20-18">
-                                    <input class="sm-form_checkbox_input" type="checkbox" id="alco21" name="alco[]" value="2">
+                                    <label for="alco10" data-sm-alcoitem="">Шампанское</label>
+                                </div>
+                                <div class="sm-form_checkbox">
+                                    <input class="sm-form_checkbox_input" type="checkbox" id="alco20" name="alco[]" value="2">
                                     <span class="sm-form_checkbox_box"></span>
-                                    <label for="alco21" data-sm-alcoitem="">Белое вино</label>
-                                </div><div class="sm-form_checkbox sm-manropeLight-20-18">
-                                    <input class="sm-form_checkbox_input" type="checkbox" id="alco31" name="alco[]" value="3">
+                                    <label for="alco20" data-sm-alcoitem="">Белое вино</label>
+                                </div>
+                                <div class="sm-form_checkbox">
+                                    <input class="sm-form_checkbox_input" type="checkbox" id="alco30" name="alco[]" value="3">
                                     <span class="sm-form_checkbox_box"></span>
-                                    <label for="alco31" data-sm-alcoitem="">Красное вино</label>
-                                </div><div class="sm-form_checkbox sm-manropeLight-20-18">
-                                    <input class="sm-form_checkbox_input" type="checkbox" id="alco41" name="alco[]" value="4">
+                                    <label for="alco30" data-sm-alcoitem="">Красное вино</label>
+                                </div>
+                                <div class="sm-form_checkbox">
+                                    <input class="sm-form_checkbox_input" type="checkbox" id="alco40" name="alco[]" value="4">
                                     <span class="sm-form_checkbox_box"></span>
-                                    <label for="alco41" data-sm-alcoitem="">Виски</label>
-                                </div><div class="sm-form_checkbox sm-manropeLight-20-18">
-                                    <input class="sm-form_checkbox_input" type="checkbox" id="alco51" name="alco[]" value="5">
+                                    <label for="alco40" data-sm-alcoitem="">Коньяк</label>
+                                </div>
+                                <div class="sm-form_checkbox">
+                                    <input class="sm-form_checkbox_input" type="checkbox" id="alco50" name="alco[]" value="5">
                                     <span class="sm-form_checkbox_box"></span>
-                                    <label for="alco51" data-sm-alcoitem="">Водка</label>
-                                </div><div class="sm-form_checkbox sm-manropeLight-20-18">
-                                    <input class="sm-form_checkbox_input" type="checkbox" id="alco61" name="alco[]" value="6">
+                                    <label for="alco50" data-sm-alcoitem="">Самогон</label>
+                                </div>
+                                <div class="sm-form_checkbox">
+                                    <input class="sm-form_checkbox_input" type="checkbox" id="alco60" name="alco[]" value="6">
                                     <span class="sm-form_checkbox_box"></span>
-                                    <label for="alco61" data-sm-alcoitem="">Джин</label>
-                                </div><div class="sm-form_checkbox sm-manropeLight-20-18">
-                                    <input class="sm-form_checkbox_input" type="checkbox" id="alco71" name="alco[]" value="7">
-                                    <span class="sm-form_checkbox_box"></span>
-                                    <label for="alco71" data-sm-alcoitem="">Ром</label>
-                                </div><div class="sm-form_checkbox sm-manropeLight-20-18">
-                                    <input class="sm-form_checkbox_input" type="checkbox" id="alco81" name="alco[]" value="8">
-                                    <span class="sm-form_checkbox_box"></span>
-                                    <label for="alco81" data-sm-alcoitem="">Не пью алкоголь</label>
-                                </div></div>
+                                    <label for="alco60" data-sm-alcoitem="">Безалкогольные напитки</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="sm-line text-paint-background background-paint-background-before text-paint-border-before"></div>
-                <button class="sm-btn" data-sm-anketa-send="1">Отправить</button>
+                <button class="sm-btn" data-sm-anketa-send="1" id="submit_formm" type="submit">Отправить</button>
             </form>
 
         </div>
-    </div>
+    </div> -->
 
     <div class="sm-thanks">
         <div class="sm-container">
             <div class="sm-thanks-close">
-                <img class="sm-thanks-close_img" src="img/close.png" alt="close">
+                <button class="close_typ">
+                    <img class="sm-thanks-close_img" src="img/close.png" alt="close">
+                </button>
             </div>
             <div class="sm-thanks-wrapp">
                 <p>

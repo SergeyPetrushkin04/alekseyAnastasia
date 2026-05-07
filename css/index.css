@@ -114,7 +114,7 @@ button {
     padding: 0
 }
 
-button,button:active {
+button {
     background: 0 0;
     border: 0
 }
@@ -1349,21 +1349,6 @@ a {
     }
 }
 
-.sm-wishes__content-wrap_pagination {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%)
-}
-
-.sm-wishes__content-item {
-    text-align: center
-}
-
-.sm-wishes__content-slider {
-    padding-bottom: 76px
-}
-
 .sm-q-l,.sm-q-r {
     position: absolute;
     top: 0
@@ -1441,7 +1426,8 @@ a {
     padding: 45px 60px;
     max-width: 780px;
     margin: 0 auto;
-    position: relative
+    position: relative;
+    font-size: 20px;
 }
 
 @media (max-width: 500px) {
@@ -1524,8 +1510,7 @@ a {
 .sm-form__block {
     font-family: "SMTextsFont",sans-serif;
     gap: 30px;
-    font-size: 20px;
-    line-height: 24px
+    line-height: 24px;
 }
 
 .sm-questionnaire .sm-line {
@@ -1713,23 +1698,25 @@ a {
     background: #505050
 }
 
-.sm-modal {
-    opacity: 1;
-    visibility: hidden;
-    -webkit-transition: .3s all;
-    -o-transition: .3s all;
-    transition: .3s all;
-    background-color: #fff;
-    z-index: 1000;
-    width: 100%;
-    top: 0;
-    left: 0;
-    overflow-y: auto;
-    height: 100vh
-}
+@media (max-width: 500px) {
+    .sm-modal-mobile {
+        opacity: 1;
+        visibility: hidden;
+        -webkit-transition: .3s all;
+        -o-transition: .3s all;
+        transition: .3s all;
+        background-color: #fff;
+        z-index: 1000;
+        width: 100%;
+        top: 0;
+        left: 0;
+        overflow-y: auto;
+        height: 100vh;
+    }
 
-.sm-modal,.sm-modal .sm-wishes_img {
-    position: fixed
+    .sm-modal-mobile,.sm-modal-mobile .sm-wishes_img {
+        position: fixed
+    }
 }
 
 .sm-modal-close {
@@ -1762,14 +1749,28 @@ a {
     object-fit: contain
 }
 
-.sm-modal-titel {
+.sm-modal-title {
     text-align: center;
-    padding-bottom: 40px
+    padding-bottom: 40px;
+    font-weight: 700;
+}
+
+@media (min-width: 501px) {
+    .sm-modal-title {
+        display: none;
+    }
 }
 
 .modal-open {
     opacity: 1;
-    visibility: visible
+    visibility: visible;
+    display: block;
+    padding: 0 16px;
+    font-size: 18px;
+}
+
+.modal-open .sm-background-photo {
+    background: #fff;
 }
 
 .sm-thanks-close {
@@ -2080,7 +2081,6 @@ a {
     line-height: 160%;
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
     color: #fff
 }
 
@@ -2541,5 +2541,9 @@ a {
     [data-sm-text=DRESSCODE_COLORS]>div>div {
         width: 50px;
         height: 50px
+    }
+
+    .mobile_hidden {
+        display: none;
     }
 }

@@ -1,3 +1,4 @@
+// Timer
 document.addEventListener('DOMContentLoaded', () => {
     const timer = () => {
         // Установите конечную дату
@@ -45,13 +46,33 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     timer();
 });
-document.querySelector('.sm-modal-close').addEventListener('click', function() {
-    document.getElementById('modal').classList.remove('modal-open');
-});
-document.querySelector('.open-modal').addEventListener('click', function() {
-    document.getElementById('modal').classList.add('modal-open');
-});
-document.querySelector('.open-modal-2').addEventListener('click', function() {
-    document.getElementById('modal').classList.add('modal-open');
-});
+// Timer End
+
+// Modal
+(() => {
+    const addClassForModal = () => {
+        document.querySelector('.sm-modal-mobile').classList.add('modal-open');
+    };
+    const removeClassForModal = () => {
+        document.querySelector('.sm-modal-mobile').classList.remove('modal-open');
+    };
+    const formSubmit = (event) => {
+        event.preventDefault();
+        removeClassForModal();
+        document.querySelector('.sm-thanks').classList.add('active');
+        console.log('formSubmit');
+    };
+    const removeClassFromTYP = () => {
+        document.querySelector('.sm-thanks').classList.remove('active');
+    };
+
+    document.querySelector('.sm-modal-close').addEventListener('click', removeClassForModal);
+    document.querySelector('.open-modal').addEventListener('click', addClassForModal);
+    document.querySelector('.open-modal-2').addEventListener('click', addClassForModal);
+
+    document.getElementById('form_approve').addEventListener('submit', formSubmit);
+    document.querySelector('.close_typ').addEventListener('click', removeClassFromTYP);
+    
+})();
+// Modal End
 
