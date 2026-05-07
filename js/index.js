@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendToBot = (message) => {
         const TOKEN = '8521166016:AAGrr08Y2KAYQkEr_pM2mkzp00lIcDPBlPs';
         const USER_ID = '769398036';
-        const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+        const URI_API = `https://aged-surf-5bc9.00corsair0.workers.dev/bot${TOKEN}/sendMessage`;
 
         fetch(URI_API, {
             method: 'POST',
