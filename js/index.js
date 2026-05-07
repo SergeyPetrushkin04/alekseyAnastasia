@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const deadline = new Date('2026-08-29T16:00:00');
         
         // Найдите элементы DOM
-        const elDays = document.querySelector('#days .sm-timer-time_numbers');
-        const elHours = document.querySelector('#hours .sm-timer-time_numbers');
-        const elMinutes = document.querySelector('#minutes .sm-timer-time_numbers');
-        const elSeconds = document.querySelector('#seconds .sm-timer-time_numbers');
+        const elDays = document.querySelector('#days .sm-timer-time_number-span');
+        const elHours = document.querySelector('#hours .sm-timer-time_number-span');
+        const elMinutes = document.querySelector('#minutes .sm-timer-time_number-span');
+        const elSeconds = document.querySelector('#seconds .sm-timer-time_number-span');
         
         // Функция склонения числительных
         const declensionNum = (num, words) => {
@@ -50,17 +50,79 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Modal
 (() => {
+    const form = document.getElementById('form_approve');
     const addClassForModal = () => {
         document.querySelector('.sm-modal-mobile').classList.add('modal-open');
     };
     const removeClassForModal = () => {
         document.querySelector('.sm-modal-mobile').classList.remove('modal-open');
     };
-    const formSubmit = (event) => {
+    const sendToBot = (message) => {
+        const TOKEN = '8521166016:AAGrr08Y2KAYQkEr_pM2mkzp00lIcDPBlPs';
+        const USER_ID = '769398036';
+        const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+
+        fetch(URI_API, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                chat_id: USER_ID,
+                parse_mode: 'html',
+                text: message,
+            })
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Сообщение отправлено!');
+                form.reset();
+            } else {
+                console.log('Ошибка при отправке');
+            }
+        })
+        .catch(error => console.error('Ошибка:', error));
+    };
+    const getMessage = () => {
+        const data = Object.fromEntries(new FormData(form));
+        const alcoArray = Object.keys(data).filter((item) => item.includes('alco'));
+
+        let message = `Кто-то не поленился и отписался по свадьбе!\n`;
+        message += `Человек: ${ data.myName }\n`;
+        message += `Придёт: ${ data.choice ? 'Да' : 'Нет' }`;
+
+        if (data.friendsName) {
+            message += `\nНамечается +N: ${ data.friendsName }`;
+        }
+        if (alcoArray.length > 0) {
+            const dataAlco = {
+                alco1: 'Шампанское',
+                alco2: 'Белое вино',
+                alco3: 'Красное вино',
+                alco4: 'Коньяк',
+                alco5: 'Самогон',
+                alco6: 'Безалкогольные напитки',
+            };
+            message += `\nХочет на стол: ${ alcoArray.reduce((result, item, index) => {
+                console.log('item', item);
+                result+= `${dataAlco[item]}`;
+
+                if (Number(index) + 1 !== Number(alcoArray.length)) {
+                    result+= ', ';
+                }
+                return result;
+            }, '') }`;
+        }
+
+        return message;
+    };
+    const formSubmit = function (event) {
         event.preventDefault();
         removeClassForModal();
         document.querySelector('.sm-thanks').classList.add('active');
-        console.log('formSubmit');
+
+        const message = getMessage();
+
+        console.log('message', message);
+        sendToBot(message);
     };
     const removeClassFromTYP = () => {
         document.querySelector('.sm-thanks').classList.remove('active');
@@ -70,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.open-modal').addEventListener('click', addClassForModal);
     document.querySelector('.open-modal-2').addEventListener('click', addClassForModal);
 
-    document.getElementById('form_approve').addEventListener('submit', formSubmit);
+    form.addEventListener('submit', formSubmit);
     document.querySelector('.close_typ').addEventListener('click', removeClassFromTYP);
     
 })();

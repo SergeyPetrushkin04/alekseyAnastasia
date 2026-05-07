@@ -1756,7 +1756,7 @@ a {
 }
 
 @media (min-width: 501px) {
-    .sm-modal-title {
+    .sm-modal-title, .desktop_hidden {
         display: none;
     }
 }
