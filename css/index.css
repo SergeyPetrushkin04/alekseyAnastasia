@@ -1490,6 +1490,12 @@ a {
     flex-direction: column
 }
 
+@media (min-width: 500px) {
+    .sm-form__wrapper {
+        gap: 30px;
+    }
+}
+
 @media (max-width: 500px) {
     .sm-form__wrapper {
         -webkit-box-orient:vertical;
@@ -1671,6 +1677,10 @@ a {
     height: 30px
 }
 
+.ct-alcotpl {
+    display: none;
+ }
+
 .sm-form_checkbox label {
     padding-left: 50px;
 }
@@ -1692,7 +1702,8 @@ a {
     -webkit-mask: url(../img/square.svg);
     background: #0e0935;
     background-size: contain;
-    cursor: pointer
+    cursor: pointer;
+    pointer-events: none;
 }
 
 .sm-form_checkbox_input:checked+.sm-form_checkbox_box {
