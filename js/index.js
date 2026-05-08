@@ -114,6 +114,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return message;
     };
+    // const sentToEmail = (message) => {
+    //     const API_KEY = '6qqr3tgkunkwa3agfnr5384j7eeqzbzr7to4np3y';
+    //     const data = Object.fromEntries(new FormData(form));
+        
+    //     const requestBody = {
+    //         api_key: API_KEY,
+    //         email: '00corsair0@gmail.com',
+    //         sender_name: data.myName,
+    //         sender_email: '00corsair0@gmail.com', // Подтвержденный email в Unisender
+    //         subject: 'Свадьба',
+    //         body: message,
+    //     };
+
+    //     try {
+    //         const response = fetch('https://api.unisender.com/ru/api/sendEmail', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify(requestBody)
+    //         });
+    //     } catch (error) {
+    //         console.error('Ошибка сети:', error);
+    //     }
+    // };
+    // const sentToEmail = (message) => {
+    //     const API_KEY = '6qqr3tgkunkwa3agfnr5384j7eeqzbzr7to4np3y';
+    //     const data = Object.fromEntries(new FormData(form));
+        
+    //     const requestBody = {
+    //         api_key: API_KEY,
+    //         email: '00corsair0@gmail.com',
+    //         sender_name: data.myName,
+    //         sender_email: '00corsair0@gmail.com', // Подтвержденный email в Unisender
+    //         subject: 'Свадьба',
+    //         body: message,
+    //     };
+
+    //     fetch('https://functions.yandexcloud.net/d4ebv3oh3re7p8i6hjdt', {
+    //         method: 'POST',
+    //         body: JSON.stringify(requestBody)
+    //     });
+    // };
     const formSubmit = function (event) {
         event.preventDefault();
         removeClassForModal();
@@ -122,7 +165,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const message = getMessage();
 
         console.log('message', message);
-        sendToBot(message);
+        // sentToEmail(message);
+        // sendToBot(message);
     };
     const removeClassFromTYP = () => {
         document.querySelector('.sm-thanks').classList.remove('active');
